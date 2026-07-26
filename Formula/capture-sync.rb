@@ -12,7 +12,7 @@ class CaptureSync < Formula
   depends_on :macos
 
   url "https://github.com/lucaschlomski/capture-sync/releases/download/v0.1.1/capture-sync_0.1.1_darwin_universal.tar.gz"
-  sha256 "629da02cc001fb4771da48129e87f96803a4359ecec97f053f189bc6e184d12d"
+  sha256 "04c8d0ce6afdeb9dfbc0337d545f79ad71f4a415bd854268afd8318cfc0f2bac"
 
   define_method(:install) do
     bin.install "capture-sync"
