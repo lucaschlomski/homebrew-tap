@@ -5,21 +5,21 @@
 class CaptureSync < Formula
   desc "Controlled rsync transfers over SSH with optional snapshots."
   homepage "https://github.com/lucaschlomski/capture-sync"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   depends_on "rsync"
   depends_on :macos
 
-  url "https://github.com/lucaschlomski/capture-sync/releases/download/v0.1.0/capture-sync_0.1.0_darwin_universal.tar.gz"
-  sha256 "64ba602b798322f3b2cd087683f1fc25ffe7f1a22821ec40a2203e064c319942"
+  url "https://github.com/lucaschlomski/capture-sync/releases/download/v0.1.1/capture-sync_0.1.1_darwin_universal.tar.gz"
+  sha256 "2d9663d18381541c041b9fedc5ce94dc3783f50f474ef3f3086a1560280adda0"
 
   define_method(:install) do
     bin.install "capture-sync"
     bin.install_symlink bin/"capture-sync" => "csync"
-    bash_completion.install Utils.popen_read("#{bin}/capture-sync", "completion", "bash") => "capture-sync"
-    zsh_completion.install Utils.popen_read("#{bin}/capture-sync", "completion", "zsh") => "_capture-sync"
-    fish_completion.install Utils.popen_read("#{bin}/capture-sync", "completion", "fish") => "capture-sync.fish"
+    (bash_completion/"capture-sync").write Utils.popen_read("#{bin}/capture-sync", "completion", "bash")
+    (zsh_completion/"_capture-sync").write Utils.popen_read("#{bin}/capture-sync", "completion", "zsh")
+    (fish_completion/"capture-sync.fish").write Utils.popen_read("#{bin}/capture-sync", "completion", "fish")
   end
 
   test do
