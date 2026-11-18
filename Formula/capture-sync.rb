@@ -5,14 +5,14 @@
 class CaptureSync < Formula
   desc "Controlled rsync transfers over SSH with optional snapshots."
   homepage "https://github.com/lucaschlomski/capture-sync"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   depends_on "rsync"
   depends_on :macos
 
-  url "https://github.com/lucaschlomski/capture-sync/releases/download/v0.1.1/capture-sync_0.1.1_darwin_universal.tar.gz"
-  sha256 "04c8d0ce6afdeb9dfbc0337d545f79ad71f4a415bd854268afd8318cfc0f2bac"
+  url "https://github.com/lucaschlomski/capture-sync/releases/download/v0.1.2/capture-sync_0.1.2_darwin_universal.tar.gz"
+  sha256 "09e488ed3fa5ae2c311ccd61ea316547d9919f14179df8764a1ce32ce8243bee"
 
   define_method(:install) do
     bin.install "capture-sync"
